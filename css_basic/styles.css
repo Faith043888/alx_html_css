@@ -46,3 +46,14 @@ aside {
 footer {
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  body.works_on_smartphone main {
+    flex-direction: column;
+  }
+
+  article, aside {
+    flex: auto;
+    min-height: 200px;
+  }
+}
