@@ -1,0 +1,134 @@
+/* General Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  background: url("images/object.png") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Content Container */
+.screen-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding: 20px 8%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 120px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-subtext {
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-spacing: 20px;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  padding: 14px 32px;
+  background-color: #9b59b6;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #8e44ad;
+}
+
+/* Pros Section */
+.pros-heading {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: white;
+  font-weight: 700;
+}
+
+.highlight {
+    color: #9b59b6;
+}
+
+/* Pros Grid */
+.pros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.pro-card img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.pro-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.pro-card p {
+  font-size: 13px;
+  color: #ddd;
+  line-height: 1.3;
+}
