@@ -9,5 +9,4 @@ This is the Headphone Company website built as part of the HTML & CSS Advanced m
 - Image assets and icons were downloaded and added as required.
 
 ## Live Demo
-
-[Add your GitHub Pages URL here when it's ready]
+https://github.com/Faith043888/alx_html_css.git
