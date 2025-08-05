@@ -1,37 +1,14 @@
-/* General Layout */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
- height: 100vh;
-  overflow: hidden;
+body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  background: url("images/object.png") no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 0;
-}
-
-/* Content Container */
-.screen-layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-  padding: 20px 8%;
+  color: #fff;
+  background-color: #fff;
 }
 
 /* Header */
@@ -39,135 +16,227 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 80px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .logo img {
-  width: 120px;
+  height: 30px;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 40px;
 }
 
-nav ul li a {
+nav a {
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-
-/* Hero Section */
-.hero-section {
-  text-align: center;
-}
-
-.hero-section h1 {
-  font-size: 64px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.hero-subtext {
-  font-size: 16px;
-  letter-spacing: 1px;
-  word-spacing: 20px;
-  color: #eee;
-  margin-bottom: 20px;
-}
-
-.hero-btn {
-  padding: 14px 32px;
-  background-color: #9b59b6;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.hero-btn:hover {
-  background-color: #8e44ad;
-}
-
-/* Pros Section */
-.pros-heading {
-  font-size: 22px;
-  text-align: center;
-  margin-bottom: 12px;
   color: white;
   font-weight: 700;
 }
 
-.highlight {
-    color: #9b59b6;
+/* Hero Section with Background Image */
+.hero-section {
+  background: url("images/object.png") no-repeat center center/cover;
+  height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
-/* Pros Grid */
-.pros-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* Hero Text */
+.hero-content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtext {
+  letter-spacing: 10px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background-color: #C271FF;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #a64de6;
+}
+
+/* Pros Section (Still Inside Hero Section) */
+.pros {
+  margin-top: 80px;
   text-align: center;
+  color: white;
+}
+
+.pros-heading {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.highlight {
+  color: #C271FF;
+  font-weight: 700;
+}
+
+.pros-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .pro-card img {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
 .pro-card h3 {
   font-size: 16px;
-  font-weight: 600;
-  color: white;
   margin-bottom: 5px;
 }
 
 .pro-card p {
   font-size: 13px;
-  color: #ddd;
-  line-height: 1.3;
+  color: #C271FF;
+  line-height: 1.4;
 }
 
-.quote-section {
+/* Testimonials Section (Side by Side) */
+.testimonial {
   background-color: #C271FF;
-  padding: 60px 20px;
-  text-align: center;
   color: white;
+  padding: 80px 20px;
 }
 
-.quote-container {
-  max-width: 600px;
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.quote-img {
-  width: 120px;
-  height: 120px;
+.testimonial-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-img {
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.testimonial-text {
+  flex: 2;
+  max-width: 600px;
+}
+
+.testimonial-text blockquote {
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.quote-text {
-  font-style: italic;
+.testimonial-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.testimonial-title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Tutorials Section */
+.tutorials {
+  padding: 80px 20px;
+  background-color: #fff;
+  color: #071629;
+  text-align: center;
+}
+
+.tutorials-heading {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.tutorials-heading .highlight {
+  color: #C271FF;
+  font-weight: 700;
+}
+
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tutorial-card {
+  text-align: left;
+  background-color: #fff;
+}
+
+.tutorial-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.tutorial-card h3 {
   font-size: 18px;
-  line-height: 1.6;
+  margin: 15px 0 10px;
+}
+
+.tutorial-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
-.quote-name {
-  font-weight: bold;
-  margin-bottom: 4px;
+.author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.quote-role {
+.tutorial-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 14px;
-  opacity: 0.9;
+  color: #C271FF;
 }
-
 
