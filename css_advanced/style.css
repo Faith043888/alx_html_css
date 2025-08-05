@@ -264,3 +264,58 @@ nav a {
   margin: 10px 0 15px;
   line-height: 1.4;
 }
+
+/* Membership Section */
+.membership {
+  background-color: #071629;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.membership-heading {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+}
+
+.membership-card img {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.membership-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.membership-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  padding: 0 10px;
+}
+
+/* Membership Button */
+.membership-btn {
+  background-color: #C271FF;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.membership-btn:hover {
+  background-color: #a64de6;
+}
+
