@@ -1,0 +1,401 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #071629;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  background: transparent;
+  z-index: 10;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 30px;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px; /* space between links */
+}
+
+.nav-links a {
+  text-decoration: none; /* remove underline */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: lowercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FF6565; /* hover color */
+}
+
+
+.nav-links a.active {
+  color: #FF6565;
+  font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('images/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: #FF6565;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.hero button:hover,
+.hero button:active {
+  opacity: 0.9;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* What We Do Section */
+.what-we-do {
+  background-color: white;
+  color: #071629;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.what-we-do h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.what-we-do p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service {
+  flex: 1 1 21%;
+  min-width: 180px;
+  margin-bottom: 30px;
+}
+
+.icon {
+  font-family: 'holberton_school-icon';
+  font-size: 50px;
+  color: #FF6565;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Our Results Section */
+.our-results {
+  position: relative;
+  background: url('images/headphones_hero_2.jpg') no-repeat center center/cover;
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+  z-index: 0;
+}
+
+.our-results::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 1;
+}
+
+.our-results > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.our-results h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.our-results p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.results-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.result {
+  flex: 1 1 21%;
+  min-width: 160px;
+  display: flex;
+  justify-content: center;
+}
+
+.pentagon {
+  position: relative;
+  width: 140px;
+  height: 130px;
+  background: #FF6565;
+  clip-path: polygon(
+    50% 0%, 
+    93% 35%, 
+    76% 100%, 
+    24% 100%, 
+    7% 35%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.pentagon .percent {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.pentagon .label {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 10px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Contact Section */
+.contact-section {
+  background: white;
+  color: #071629;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 40px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #071629;
+}
+
+/* Underline style for inputs and textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  color: #071629;
+  background: transparent;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #FF6565;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #FF6565;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 15px 40px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #e05252;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services, .results-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service, .result {
+    flex: none;
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero h2 {
+    font-size: 14px;
+  }
+
+  .hero button {
+    padding: 10px 20px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+  .what-we-do h2,
+  .our-results h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .what-we-do p,
+  .our-results p,
+  .result p {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+
+/* Icon font face */
+@font-face {
+  font-family: 'holberton_school-icon';
+  src: url('fonts/holberton_school-icon.eot');
+  src: url('fonts/holberton_school-icon.eot?#iefix') format('embedded-opentype'),
+       url('fonts/holberton_school-icon.woff') format('woff'),
+       url('fonts/holberton_school-icon.ttf') format('truetype'),
+       url('fonts/holberton_school-icon.svg#holberton_school-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Icon mapping */
+.holberton_school-icon-ic_sound:before { content: "\e90e"; }
+.holberton_school-icon-ic_video:before { content: "\e910"; }
+.holberton_school-icon-ic_music:before { content: "\e90d"; }
+.holberton_school-icon-ic_hearing:before { content: "\e909"; }
+
