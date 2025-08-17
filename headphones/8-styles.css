@@ -607,6 +607,38 @@ body {
   }
 }
 
+/* Grid & animation tweaks for small screens */
+@media (max-width: 480px) {
+  /* Services & Results grids */
+  .services, .results-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service, .result {
+    width: 90%;
+    margin-bottom: 25px;
+  }
+
+  /* Keep animations smooth */
+  .service, .result {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  .service:nth-child(1),
+  .result:nth-child(1) { animation-delay: 0.1s; }
+  .service:nth-child(2),
+  .result:nth-child(2) { animation-delay: 0.2s; }
+  .service:nth-child(3),
+  .result:nth-child(3) { animation-delay: 0.3s; }
+  .service:nth-child(4),
+  .result:nth-child(4) { animation-delay: 0.4s; }
+}
+
+
 /* Very small phones */
 @media (max-width: 400px) {
   .hero h1 {
