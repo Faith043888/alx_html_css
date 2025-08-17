@@ -42,11 +42,11 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 35px; /* space between links */
+  gap: 35px;
 }
 
 .nav-links a {
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   color: #fff;
   font-size: 14px;
   font-weight: 400;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #FF6565; /* hover color */
+  color: #FF6565;
 }
 
 /* Hero Section */
@@ -114,7 +114,7 @@ body {
   margin: 0 auto;
 }
 
-/* What We Do Section */
+/* WHAT WE DO SECTION */
 .what-we-do {
   background-color: white;
   color: #071629;
@@ -145,6 +145,20 @@ body {
   flex: 1 1 21%;
   min-width: 180px;
   margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:nth-child(1) { animation-delay: 0.2s; }
+.service:nth-child(2) { animation-delay: 0.4s; }
+.service:nth-child(3) { animation-delay: 0.6s; }
+.service:nth-child(4) { animation-delay: 0.8s; }
+
+.service:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .icon {
@@ -205,6 +219,18 @@ body {
   min-width: 160px;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 0.8s forwards;
+}
+
+.result:nth-child(1) { animation-delay: 0.2s; }
+.result:nth-child(2) { animation-delay: 0.4s; }
+.result:nth-child(3) { animation-delay: 0.6s; }
+.result:nth-child(4) { animation-delay: 0.8s; }
+
+.result:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .pentagon {
@@ -243,7 +269,19 @@ body {
   line-height: 1.3;
 }
 
-/* Contact Section */
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  60% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* CONTACT SECTION */
 .contact-section {
   background: white;
   color: #071629;
@@ -281,7 +319,6 @@ body {
   padding: 8px 0;
   border: none;
   border-bottom: 2px solid #ccc;
-  border-radius: 0;
   font-size: 16px;
   font-family: inherit;
   transition: border-color 0.3s ease;
@@ -320,8 +357,7 @@ body {
   background-color: #e05252;
 }
 
-/* footer */
-
+/* FOOTER */
 .footer {
   background-color: #071629;
   color: #fff;
@@ -347,6 +383,27 @@ body {
   gap: 15px;
 }
 
+.footer-bottom {
+  max-width: 1000px;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+
+.footer-logo img {
+  height: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
 .social-icons a {
   display: inline-flex;
   align-items: center;
@@ -360,66 +417,6 @@ body {
 .social-icons img {
   width: 18px;
   height: 18px;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 10px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-
-/* Example social icon styling - replace background images or font icons as needed */
-.social-icon {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: filter 0.3s ease;
-  filter: grayscale(100%);
-}
-
-.social-icon:hover,
-.social-icon:focus {
-  filter: grayscale(0%);
-  outline: none;
-}
-
-/* Replace these background images with your social media icon files or font icons */
-.fb-icon {
-  background-image: url('images/social/facebook.svg');
-}
-
-.twitter-icon {
-  background-image: url('images/social/twitter.svg');
-}
-
-.insta-icon {
-  background-image: url('images/social/instagram.svg');
-}
-
-.linkedin-icon {
-  background-image: url('images/social/linkedin.svg');
-}
-
-/* Responsive footer */
-@media (max-width: 480px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .footer-left {
-    justify-content: center;
-  }
-
-  .footer-right {
-    justify-content: center;
-  }
 }
 
 /* Responsive */
@@ -494,3 +491,167 @@ body {
 .holberton_school-icon-ic_video:before { content: "\e910"; }
 .holberton_school-icon-ic_music:before { content: "\e90d"; }
 .holberton_school-icon-ic_hearing:before { content: "\e909"; }
+
+/* Copy all previous 7-styles.css here first */
+/* ... your existing styles ... */
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Active state */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Nav */
+@media (max-width: 480px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #071629;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Additional Responsive Tweaks */
+
+/* Medium tablets */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 15px 20px;
+  }
+
+  .hero-text {
+    padding-top: 50px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .services, .results-grid {
+    gap: 15px;
+  }
+
+  .service, .result {
+    width: 45%;
+  }
+}
+
+/* Small tablets and landscape phones */
+@media (max-width: 600px) {
+  .hero-text {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero h2 {
+    font-size: 14px;
+  }
+
+  .services, .results-grid {
+    gap: 10px;
+  }
+
+  .service, .result {
+    width: 60%;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero h2 {
+    font-size: 12px;
+  }
+
+  .hero button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .hero p {
+    font-size: 11px;
+  }
+
+  .service, .result {
+    width: 90%;
+  }
+
+  .what-we-do h2,
+  .our-results h2,
+  .contact-section h2 {
+    font-size: 20px;
+  }
+
+  .what-we-do p,
+  .our-results p {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+}
+
+

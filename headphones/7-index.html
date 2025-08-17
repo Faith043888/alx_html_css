@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Headphones</title>
-  <link rel="stylesheet" href="4-styles.css" />
+  <link rel="stylesheet" href="7-styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -126,34 +126,58 @@
     </div>
   </section>
 
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-logo">
-      <img src="images/logo_headphones.png" alt="Headphones Logo">
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="images/logo_headphones.png" alt="Headphones Logo">
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      </div>
     </div>
-    <div class="social-icons">
-      <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+    <div class="footer-bottom">
+      <p>© headphones 2020</p>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© headphones 2020</p>
-  </div>
-</footer>
+  </footer>
 
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!-- Attribution -->
-<!--
-Facebook icons created by Stockio - Flaticon
-Instagram icons created by Yumminky - Flaticon
-Bird icons created by Picons - Flaticon
--->
+  <!-- Scroll-trigger animations -->
+  <script>
+    function revealOnScroll(elements, offset = 150) {
+      const windowHeight = window.innerHeight;
+      elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if(position < windowHeight - offset) {
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0) scale(1)';
+        }
+      });
+    }
 
+    document.addEventListener('DOMContentLoaded', () => {
+      const services = document.querySelectorAll('.service');
+      const results = document.querySelectorAll('.result');
 
-<!-- Font Awesome CDN -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      // Initialize with hidden
+      services.forEach(s => s.style.opacity = 0);
+      results.forEach(r => r.style.opacity = 0);
 
+      // Reveal on scroll
+      window.addEventListener('scroll', () => {
+        revealOnScroll(services, 150);
+        revealOnScroll(results, 150);
+      });
+
+      // Trigger once if already in view
+      revealOnScroll(services, 150);
+      revealOnScroll(results, 150);
+    });
+  </script>
 
 </body>
 </html>
+
